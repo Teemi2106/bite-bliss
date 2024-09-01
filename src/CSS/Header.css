@@ -1,0 +1,23 @@
+header h1,
+h2 {
+  color: var(--main-color);
+  text-shadow: 1px 1px black;
+}
+header {
+  min-height: 10vmin;
+  background-color: beige;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vmin;
+}
+
+.svg {
+  height: 8vmin;
+  padding: 1vmin;
+  border-radius: 50%;
+  aspect-ratio: 2/2;
+  color: var(--main-color);
+  background-color: var(--main-color);
+  box-shadow: 1px 1px black;
+}

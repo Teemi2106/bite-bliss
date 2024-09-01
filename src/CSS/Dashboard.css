@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.mealItem {
+  cursor: pointer;
+  display: flex;
+  min-width: fit-content;
+  min-height: 60vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3vmin;
+  text-align: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+}
+.mealItem h3 {
+  font-size: 2em;
+}
+.mealItem p {
+  font-size: 1.5em;
+  color: green;
+}
+.mealList {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  scrollbar-color: var(--main-color) transparent;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  width: 100%;
+}
+.mealItem img {
+  height: 30vmin;
+  aspect-ratio: 4/3.5;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: 0.3s;
+}
+.mealItem img:hover {
+  scale: 1.2;
+}
+.parent {
+  scroll-snap-type: y mandatory;
+  scrollbar-color: var(--main-color) transparent;
+  display: flex;
+  overflow-x: scroll;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3vmin;
+  margin-top: 5vmin;
+}
+#mealSection,
+#drinksSection {
+  width: 80%;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4vmin;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+}
+.text-center {
+  color: var(--main-color);
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vmin;
+  width: 100%;
+  text-align: center;
+}
+.cartItem {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  margin: 2vmin;
+}
+.cartItem img {
+  height: 10vmin;
+}
+.cartItem h3 {
+  font-size: 3vmin;
+}
+.plus,
+.minus {
+  width: 5vmin;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  background-color: white;
+  transition: 0.2s;
+}
+.plus:hover,
+.minus:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.delete {
+  padding: 1vmin 2vmin;
+  border-radius: 20px;
+  border: 1px solid red;
+  background-color: white;
+  transition: 0.2s;
+}
+
+.delete:hover {
+  background-color: red;
+  color: white;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 20%;
+}
+button {
+  cursor: pointer;
+}
+
+.total {
+  background-color: white;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.total button,
+.add {
+  background-color: white;
+  columns: var(--main-color);
+  transition: 0.2s;
+  padding: 1vmin 2vmin;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.total button:hover,
+.add:hover {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1.5vmin 3vmin;
+  border-radius: 20px;
+}
+.mealHeader {
+  width: 100%;
+  padding: 3vmin;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+  .parent {
+    flex-direction: column;
+    scroll-snap-type: x mandatory;
+    padding-top: 5vmin;
+  }
+  .mealList {
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+  }
+  .mealItem {
+    min-width: 100%;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+  }
+}
